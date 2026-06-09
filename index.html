@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>david_favela</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Manrope:wght@200..800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-fixed-dim": "#c8c6c5",
+              "surface-bright": "#393939",
+              "secondary-fixed": "#ffdea5",
+              "surface-container-highest": "#353535",
+              "on-primary-fixed-variant": "#474646",
+              "outline-variant": "#444748",
+              "on-tertiary": "#2f3131",
+              surface: "#131313",
+              "on-tertiary-fixed-variant": "#454747",
+              "on-surface": "#e5e2e1",
+              "inverse-surface": "#e5e2e1",
+              "secondary-fixed-dim": "#e9c176",
+              outline: "#8e9192",
+              "on-primary": "#313030",
+              "error-container": "#93000a",
+              "on-error": "#690005",
+              "secondary-container": "#604403",
+              "surface-tint": "#c8c6c5",
+              "tertiary-fixed-dim": "#c6c6c7",
+              "on-tertiary-container": "#7c7d7e",
+              "surface-container": "#202020",
+              "on-primary-fixed": "#1c1b1b",
+              "inverse-primary": "#5f5e5e",
+              "on-secondary-container": "#dab36a",
+              "surface-variant": "#353535",
+              tertiary: "#c6c6c7",
+              "on-secondary": "#412d00",
+              "on-secondary-fixed": "#261900",
+              "on-primary-container": "#7e7d7d",
+              "surface-container-lowest": "#0e0e0e",
+              "surface-container-high": "#2a2a2a",
+              "tertiary-fixed": "#e2e2e2",
+              "surface-dim": "#131313",
+              error: "#ffb4ab",
+              "on-surface-variant": "#c4c7c7",
+              "on-tertiary-fixed": "#1a1c1c",
+              background: "#131313",
+              secondary: "#e9c176",
+              primary: "#c8c6c5",
+              "inverse-on-surface": "#303030",
+              "on-error-container": "#ffdad6",
+              "on-background": "#e5e2e1",
+              "tertiary-container": "#101213",
+              "on-secondary-fixed-variant": "#5d4201",
+              "primary-fixed": "#e5e2e1",
+              "primary-container": "#121212",
+              "surface-container-low": "#1b1b1c",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            spacing: {
+              "container-max-width": "1200px",
+              base: "8px",
+              gutter: "24px",
+              "margin-desktop": "64px",
+              "margin-mobile": "20px",
+            },
+            fontFamily: {
+              "display-lg": ["EB Garamond"],
+              "headline-lg": ["EB Garamond"],
+              "label-md": ["Manrope"],
+              "headline-sm": ["EB Garamond"],
+              "headline-md": ["EB Garamond"],
+              "body-lg": ["Manrope"],
+              "body-md": ["Manrope"],
+              "headline-lg-mobile": ["EB Garamond"],
+            },
+            fontSize: {
+              "display-lg": [
+                "48px",
+                {
+                  lineHeight: "56px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "500",
+                },
+              ],
+              "headline-lg": [
+                "32px",
+                { lineHeight: "40px", fontWeight: "500" },
+              ],
+              "label-md": [
+                "14px",
+                {
+                  lineHeight: "20px",
+                  letterSpacing: "0.1em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-sm": [
+                "20px",
+                { lineHeight: "28px", fontWeight: "600" },
+              ],
+              "headline-md": [
+                "24px",
+                { lineHeight: "32px", fontWeight: "500" },
+              ],
+              "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+              "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+              "headline-lg-mobile": [
+                "28px",
+                { lineHeight: "36px", fontWeight: "500" },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        background-color: #131313;
+        color: #e5e2e1;
+        overflow-x: hidden;
+      }
+      .gold-border-gradient {
+        border-image: linear-gradient(
+            to bottom right,
+            #ffdea5,
+            #e9c176,
+            #604403
+          )
+          1;
+      }
+      .matte-overlay {
+        background: linear-gradient(
+          180deg,
+          rgba(18, 18, 18, 0) 0%,
+          rgba(18, 18, 18, 0.95) 100%
+        );
+      }
+      .diamond-divider::after {
+        content: "◆";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background: #131313;
+        padding: 0 10px;
+        color: #e9c176;
+        font-size: 10px;
+      }
+      .floating-accent {
+        filter: blur(80px);
+        opacity: 0.1;
+      }
+    </style>
+    <script>
+      // Micro-interactions and atmospheric scroll effects
+      window.addEventListener("scroll", () => {
+        const nav = document.querySelector("nav");
+
+        if (!nav) return;
+
+        if (window.scrollY > 50) {
+          nav.classList.add("shadow-2xl");
+          nav.classList.remove("bg-background/70");
+          nav.classList.add("bg-background/95");
+        } else {
+          nav.classList.remove("shadow-2xl");
+          nav.classList.remove("bg-background/95");
+          nav.classList.add("bg-background/70");
+        }
+      });
+
+      // Simple entrance animations for cards
+      const observerOptions = {
+        threshold: 0.1,
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("opacity-100", "translate-y-0");
+            entry.target.classList.remove("opacity-0", "translate-y-10");
+          }
+        });
+      }, observerOptions);
+
+      document
+        .querySelectorAll(".bg-surface-container, .bg-surface-container-high")
+        .forEach((el) => {
+          el.classList.add(
+            "transition-all",
+            "duration-700",
+            "opacity-0",
+            "translate-y-10",
+          );
+          observer.observe(el);
+        });
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
