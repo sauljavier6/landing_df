@@ -16,57 +16,135 @@ export default function TopNavbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinkClass = ({ isActive }: { isActive: boolean }) =>
-    `font-headline-sm text-headline-sm uppercase tracking-widest transition-colors duration-300 pb-1 ${
-      isActive
-        ? "text-secondary border-b border-secondary"
-        : "text-on-surface-variant hover:text-secondary-fixed-dim"
-    }`;
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
 
-  const mobileLinkClass =
-    "block font-headline-sm text-headline-sm uppercase tracking-widest text-on-surface-variant hover:text-secondary py-3";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
+  const navLinkClass = ({ isActive }: { isActive: boolean }) =>
+    `
+      relative pb-2
+      font-headline-sm text-sm lg:text-base
+      uppercase tracking-[0.12em]
+      transition-colors duration-300
+      after:absolute after:left-0 after:bottom-0
+      after:h-px after:bg-secondary
+      after:transition-all after:duration-300
+      ${
+        isActive
+          ? "text-secondary after:w-full"
+          : "text-on-surface-variant hover:text-secondary after:w-0 hover:after:w-full"
+      }
+    `;
+
+  const mobileLinkClass = ({ isActive }: { isActive: boolean }) =>
+    `
+      flex items-center justify-between
+      py-4 border-b border-outline-variant/20
+      font-headline-sm text-base
+      uppercase tracking-[0.14em]
+      transition-colors
+      ${
+        isActive
+          ? "text-secondary"
+          : "text-on-surface-variant hover:text-secondary"
+      }
+    `;
+
+  const closeMenu = () => setOpen(false);
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 backdrop-blur-xl border-b border-outline-variant/30 transition-colors duration-300 ${
-        scrolled ? "bg-background/90" : "bg-background/70"
-      }`}
+      className={`
+        fixed top-0 left-0 z-50 w-full
+        border-b border-outline-variant/30
+        backdrop-blur-xl
+        transition-all duration-300
+        ${
+          scrolled
+            ? "bg-background/95 shadow-[0_10px_35px_rgba(0,0,0,0.18)]"
+            : "bg-background/80"
+        }
+      `}
     >
-      <div className="h-16 md:h-20 max-w-container-max-width mx-auto px-4 sm:px-6 lg:px-0 flex justify-between items-center gap-5">
+      <div className="h-16 md:h-20 max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-6">
+        {/* LOGO */}
         <Link
           to="/"
-          onClick={() => setOpen(false)}
-          className="font-display-lg text-lg sm:text-xl lg:text-2xl text-secondary tracking-tighter cursor-pointer whitespace-nowrap"
+          onClick={closeMenu}
+          className="flex items-center gap-3 min-w-0 shrink-0"
         >
-          DR. DAVID FAVELA
+          <img
+            src="/logo.jpeg"
+            alt="Dr. David Favela"
+            className="h-11 w-11 md:h-12 md:w-12 rounded-full object-cover border border-secondary/20"
+          />
+
+          <div className="flex flex-col leading-none min-w-0">
+            <span className="font-display-lg text-lg md:text-xl lg:text-[22px] text-secondary tracking-tight whitespace-nowrap">
+              DR. DAVID FAVELA
+            </span>
+
+            <span className="mt-1 text-[9px] md:text-[10px] uppercase tracking-[0.28em] text-on-surface-variant">
+              Odontólogo
+            </span>
+          </div>
         </Link>
 
-        <div className="hidden md:flex gap-10 items-center">
+        {/* DESKTOP */}
+        <div className="hidden md:flex items-center gap-6 lg:gap-9">
           <NavLink to="/" className={navLinkClass}>
             Inicio
           </NavLink>
+
           <NavLink to="/especialidades" className={navLinkClass}>
             Especialidades
           </NavLink>
+
           <NavLink to="/tratamientos" className={navLinkClass}>
-            Tratamientos
+            Conócenos
           </NavLink>
+
           <NavLink to="/contacto" className={navLinkClass}>
             Contacto
           </NavLink>
 
           <NavLink
             to="/contacto"
-            className="bg-secondary text-on-secondary px-8 py-2 font-label-md text-label-md uppercase active:scale-95 duration-200 transition-all hover:bg-secondary-fixed"
+            className="
+              ml-1
+              bg-secondary text-on-secondary
+              px-6 lg:px-8 py-3
+              font-label-md text-sm
+              uppercase tracking-[0.08em]
+              hover:bg-secondary-fixed
+              active:scale-95
+              transition-all duration-200
+              whitespace-nowrap
+            "
           >
-            Agendar Cita
+            Agendar cita
           </NavLink>
         </div>
 
+        {/* MOBILE BUTTON */}
         <button
           type="button"
-          onClick={() => setOpen(!open)}
-          className="md:hidden text-secondary"
+          onClick={() => setOpen((current) => !current)}
+          className="
+            md:hidden
+            h-11 w-11
+            flex items-center justify-center
+            border border-secondary/30
+            text-secondary
+            hover:bg-secondary/10
+            transition-colors
+          "
+          aria-label={open ? "Cerrar menú" : "Abrir menú"}
+          aria-expanded={open}
         >
           <span className="material-symbols-outlined">
             {open ? "close" : "menu"}
@@ -97,7 +175,7 @@ export default function TopNavbar() {
             onClick={() => setOpen(false)}
             className={mobileLinkClass}
           >
-            Tratamientos
+            Conócenos
           </NavLink>
 
           <NavLink

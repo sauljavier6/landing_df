@@ -2,7 +2,7 @@ export default function HomeComponent() {
   return (
     <div className="font-body-md text-on-background selection:bg-secondary selection:text-on-secondary overflow-x-hidden">
       <main className="pt-16 md:pt-20">
-        <section className="relative min-h-screen md:min-h-[921px] flex items-center overflow-hidden px-6 md:px-margin-desktop py-16 md:py-20">
+        <section className="relative min-h-[720px] md:min-h-[921px] flex items-center overflow-hidden px-6 md:px-margin-desktop py-16 md:py-20">
           <div className="absolute inset-0 z-0">
             <img
               alt="Dr. David Favela Portrait"
@@ -11,47 +11,41 @@ export default function HomeComponent() {
                 w-full
                 h-full
                 object-cover
-
-                object-[58%_10%]
-                md:object-[62%_15%]
-                lg:object-[66%_12%]
-                xl:object-[68%_10%]
-
-                opacity-90
-                brightness-90
+                object-center
+                md:object-[65%_20%]
+                opacity-80
+                brightness-[0.7]
                 saturate-105
-
-                scale-95
-                lg:scale-90
+                scale-100
               "
             />
 
-            
+            <div className="absolute inset-0 bg-black/45"></div>
           </div>
 
           <div className="relative z-10 w-full max-w-container-max-width mx-auto flex flex-col md:flex-row items-center md:items-end justify-between gap-10">
-            <div className="w-full max-w-2xl text-center md:text-left mb-0 md:mb-12">
+            <div className="w-full max-w-xl lg:max-w-2xl text-center md:text-left mb-0 md:mb-12">
               <span className="font-label-md text-xs sm:text-sm md:text-label-md text-secondary tracking-[0.22em] sm:tracking-[0.3em] uppercase mb-4 block">
                 Médico Especialista
               </span>
 
-              <h1 className="font-display-lg text-[48px] xs:text-[52px] sm:text-6xl md:text-[80px] leading-[0.95] md:leading-tight text-on-surface mb-6 break-words">
+              <h1 className="font-display-lg text-[38px] sm:text-[56px] md:text-[80px] leading-[0.95] md:leading-tight text-white mb-6 break-words">
                 Innovación <br />
                 <span className="text-secondary italic">Consciente</span>
               </h1>
 
-              <p className="font-body-lg text-base sm:text-lg md:text-body-lg text-on-surface-variant max-w-xl mx-auto md:mx-0 mb-10 md:mb-12 leading-relaxed">
+              <p className="font-body-lg text-base sm:text-lg md:text-body-lg text-white/80 max-w-xl mx-auto md:mx-0 mb-10 md:mb-12 leading-relaxed">
                 Liderando una nueva era en la medicina contemporánea donde la
                 precisión tecnológica se encuentra con la calidez del trato
                 personalizado. Excelencia médica para el paciente moderno.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto">
-                <button className="w-full sm:w-auto bg-secondary text-on-secondary px-6 sm:px-10 py-4 font-label-md text-sm md:text-label-md uppercase tracking-widest hover:brightness-110 transition-all">
+              <div className="flex flex-col md:flex-row gap-3 md:gap-6 w-full md:w-auto">
+                <button className="w-full md:w-auto bg-secondary text-on-secondary px-6 sm:px-10 py-4 font-label-md text-sm md:text-label-md uppercase tracking-widest hover:brightness-110 transition-all">
                   Conocer Trayectoria
                 </button>
 
-                <button className="w-full sm:w-auto border border-secondary/50 text-secondary px-6 sm:px-10 py-4 font-label-md text-sm md:text-label-md uppercase tracking-widest hover:bg-secondary/10 transition-all">
+                <button className="w-full md:w-auto border border-secondary/50 text-secondary px-6 sm:px-10 py-4 font-label-md text-sm md:text-label-md uppercase tracking-widest hover:bg-secondary/10 transition-all">
                   Especialidades
                 </button>
               </div>
@@ -63,7 +57,7 @@ export default function HomeComponent() {
                   <span className="block font-display-lg text-headline-md text-secondary">
                     +12
                   </span>
-                  <span className="block font-label-md text-label-md uppercase tracking-tighter text-on-surface-variant">
+                  <span className="block font-label-md text-label-md uppercase tracking-tighter text-white/70">
                     Años de Experiencia
                   </span>
                 </div>
@@ -72,7 +66,7 @@ export default function HomeComponent() {
                   <span className="block font-display-lg text-headline-md text-secondary">
                     500+
                   </span>
-                  <span className="block font-label-md text-label-md uppercase tracking-tighter text-on-surface-variant">
+                  <span className="block font-label-md text-label-md uppercase tracking-tighter text-white/70">
                     Cirugías Exitosas
                   </span>
                 </div>
@@ -80,8 +74,8 @@ export default function HomeComponent() {
             </div>
           </div>
 
-          <div className="absolute top-1/4 -right-32 md:-right-20 w-72 md:w-96 h-72 md:h-96 bg-secondary floating-accent rounded-full"></div>
-          <div className="absolute -bottom-28 -left-32 md:-bottom-20 md:-left-20 w-[320px] md:w-[500px] h-[320px] md:h-[500px] bg-secondary-container floating-accent rounded-full"></div>
+          <div className="hidden md:block absolute top-1/4 -right-20 w-96 h-96 bg-secondary floating-accent rounded-full"></div>
+          <div className="hidden md:block absolute -bottom-20 -left-20 w-[500px] h-[500px] bg-secondary-container floating-accent rounded-full"></div>
         </section>
 
         <section className="py-16 md:py-24 bg-surface px-6 md:px-margin-desktop">
@@ -229,7 +223,6 @@ export default function HomeComponent() {
                     <img
                       alt="Medical Facility"
                       className="w-full h-44 md:h-40 object-cover grayscale brightness-50 border border-secondary/20"
-                      data-alt="A macro shot of sophisticated surgical equipment and high-tech medical monitors in a dimly lit, luxury operating theater. The scene is bathed in a cool blue and matte black atmosphere, with sharp golden metallic highlights reflecting off the stainless steel instruments. The mood is highly professional, sterile, and technologically advanced, suggesting a boutique medical clinic."
                       src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxciG4SPjmlsfIi58EwfK3yuwx9G_4a0U1i7ZXJKd7ziBTd3PnVtrKSkypZPjXw3s5CyEvhfil8q1lRpC5m3Oq7Sbo_YopTRXVZ0QHDxOBO5ZeYW0ZauCAXmTm9B4knkw56v1z2ohx4e6bAYARuAe-qxD--Ltk3qSbIYpiC1XoS77yA1QDUaq7ZiMiRaPMK8xt37NGtsGj5Fb7Q5orwyaQY051pcu3Ii5siw5HXJKwQh7OMN9Lg4F2fGCn6QLu2N3dHWkc_M9XGj-M"
                     />
                   </div>
@@ -260,13 +253,21 @@ export default function HomeComponent() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto">
-              <button className="w-full sm:w-auto bg-secondary text-on-secondary px-8 sm:px-12 py-5 font-label-md text-sm md:text-label-md uppercase tracking-widest active:scale-95 transition-all">
-                Agendar Cita Ahora
-              </button>
+              <a
+                href="tel:+526647544279"
+                className="w-full sm:w-auto bg-secondary text-on-secondary px-8 sm:px-12 py-5 font-label-md text-sm md:text-label-md uppercase tracking-widest active:scale-95 transition-all text-center inline-flex items-center justify-center"
+              >
+                Contactar
+              </a>
 
-              <button className="w-full sm:w-auto border border-outline-variant text-on-surface px-8 sm:px-12 py-5 font-label-md text-sm md:text-label-md uppercase tracking-widest hover:border-secondary transition-all">
+              <a
+                href="https://wa.me/526647544279"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto border border-outline-variant text-on-surface px-8 sm:px-12 py-5 font-label-md text-sm md:text-label-md uppercase tracking-widest hover:border-secondary transition-all text-center inline-flex items-center justify-center"
+              >
                 Contactar por WhatsApp
-              </button>
+              </a>
             </div>
           </div>
         </section>
