@@ -1,4 +1,8 @@
+import { useNavigate } from "react-router-dom";
+
 export default function HomeComponent() {
+  const navigate = useNavigate();
+
   return (
     <div className="font-body-md text-on-background selection:bg-secondary selection:text-on-secondary overflow-x-hidden">
       <main className="pt-16 md:pt-20">
@@ -41,11 +45,17 @@ export default function HomeComponent() {
               </p>
 
               <div className="flex flex-col md:flex-row gap-3 md:gap-6 w-full md:w-auto">
-                <button className="w-full md:w-auto bg-secondary text-on-secondary px-6 sm:px-10 py-4 font-label-md text-sm md:text-label-md uppercase tracking-widest hover:brightness-110 transition-all">
+                <button
+                  onClick={() => navigate("/tratamientos")}
+                  className="w-full md:w-auto bg-secondary text-on-secondary px-6 sm:px-10 py-4 font-label-md text-sm md:text-label-md uppercase tracking-widest hover:brightness-110 transition-all"
+                >
                   Conocer Trayectoria
                 </button>
 
-                <button className="w-full md:w-auto border border-secondary/50 text-secondary px-6 sm:px-10 py-4 font-label-md text-sm md:text-label-md uppercase tracking-widest hover:bg-secondary/10 transition-all">
+                <button
+                  onClick={() => navigate("/especialidades")}
+                  className="w-full md:w-auto border border-secondary/50 text-secondary px-6 sm:px-10 py-4 font-label-md text-sm md:text-label-md uppercase tracking-widest hover:bg-secondary/10 transition-all"
+                >
                   Especialidades
                 </button>
               </div>
@@ -55,7 +65,7 @@ export default function HomeComponent() {
               <div className="border-l border-secondary/30 pl-8 space-y-8">
                 <div>
                   <span className="block font-display-lg text-headline-md text-secondary">
-                    +12
+                    +5
                   </span>
                   <span className="block font-label-md text-label-md uppercase tracking-tighter text-white/70">
                     Años de Experiencia
@@ -67,7 +77,7 @@ export default function HomeComponent() {
                     500+
                   </span>
                   <span className="block font-label-md text-label-md uppercase tracking-tighter text-white/70">
-                    Cirugías Exitosas
+                    Procedimientos Exitosos
                   </span>
                 </div>
               </div>
