@@ -7,7 +7,7 @@ export default function ContactoComponent() {
             {/* Información */}
             <div className="z-10">
               <span className="font-label-md text-sm md:text-label-md text-secondary uppercase tracking-[0.2em] mb-4 block">
-                Contacto de Élite
+                Contacto
               </span>
 
               <h1 className="font-display-lg text-4xl sm:text-5xl md:text-display-lg mb-6 leading-tight">
@@ -66,7 +66,7 @@ export default function ContactoComponent() {
                 </a>
 
                 <a
-                  href="mailto:contacto@drdavidfavela.com?subject=Solicitud%20de%20consulta&body=Hola%20Dr.%20David%20Favela,%0D%0A%0D%0AMe%20gustaría%20recibir%20información%20para%20agendar%20una%20consulta.%0D%0A%0D%0ANombre:%0D%0ATeléfono:%0D%0AMotivo%20de%20consulta:"
+                  href="mailto:davidfavela509@gmail.com?subject=Solicitud%20de%20consulta&body=Hola%20Dr.%20David%20Favela,%0D%0A%0D%0AMe%20gustaría%20recibir%20información%20para%20agendar%20una%20consulta.%0D%0A%0D%0ANombre:%0D%0ATeléfono:%0D%0AMotivo%20de%20consulta:"
                   className="flex items-center gap-5 md:gap-6 group"
                 >
                   <div className="w-12 h-12 flex items-center justify-center gold-border rounded-full group-hover:bg-secondary/10 transition-colors shrink-0">
@@ -81,7 +81,7 @@ export default function ContactoComponent() {
                     </p>
 
                     <p className="font-headline-sm text-xl md:text-headline-sm text-secondary break-all">
-                      contacto@drdavidfavela.com
+                      davidfavela509@gmail.com
                     </p>
                   </div>
                 </a>

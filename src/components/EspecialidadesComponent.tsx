@@ -276,7 +276,7 @@ export default function EspecialidadesComponent() {
                 <img
                   className="w-full h-full object-cover opacity-80"
                   data-alt="Doctor dental en consultorio moderno."
-                  src="/public/david_perfil.jpeg"
+                  src="/david_perfil.jpeg"
                 />
               </div>
 
