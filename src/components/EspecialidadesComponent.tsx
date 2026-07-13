@@ -1,10 +1,13 @@
+import { useNavigate } from "react-router-dom";
+
 export default function EspecialidadesComponent() {
+  const navigate = useNavigate();
+  
   const categorias = [
     {
       icon: "health_and_safety",
       titulo: "Implantología",
-      imagen:
-        "/implantologia.png",
+      imagen: "/implantologia.png",
       descripcion:
         "Rehabilitación avanzada con implantes dentales para recuperar función, estética y confianza.",
       tratamientos: [
@@ -23,8 +26,7 @@ export default function EspecialidadesComponent() {
     {
       icon: "dentistry",
       titulo: "Ortodoncia",
-      imagen:
-        "/ortodoncia.png",
+      imagen: "/ortodoncia.png",
       descripcion:
         "Alineación dental con opciones modernas para mejorar la mordida y la armonía de tu sonrisa.",
       tratamientos: [
@@ -39,8 +41,7 @@ export default function EspecialidadesComponent() {
     {
       icon: "medical_services",
       titulo: "Cirugía Oral",
-      imagen:
-        "/cirugiaoral.png",
+      imagen: "/cirugiaoral.png",
       descripcion:
         "Procedimientos quirúrgicos dentales realizados con planeación, precisión y cuidado profesional.",
       tratamientos: [
@@ -56,8 +57,7 @@ export default function EspecialidadesComponent() {
     {
       icon: "workspace_premium",
       titulo: "Rehabilitación Oral",
-      imagen:
-        "/rehabilitacionoral.png",
+      imagen: "/rehabilitacionoral.png",
       descripcion:
         "Restauramos piezas dentales dañadas o perdidas para devolver estética, función y comodidad.",
       tratamientos: [
@@ -75,8 +75,7 @@ export default function EspecialidadesComponent() {
     {
       icon: "healing",
       titulo: "Endodoncia",
-      imagen:
-        "/endodoncia.png",
+      imagen: "/endodoncia.png",
       descripcion:
         "Tratamientos para conservar dientes afectados por dolor, infección o daño profundo.",
       tratamientos: [
@@ -90,8 +89,7 @@ export default function EspecialidadesComponent() {
     {
       icon: "auto_awesome",
       titulo: "Estética Dental",
-      imagen:
-        "/esteticadental.png",
+      imagen: "/esteticadental.png",
       descripcion:
         "Mejoramos la apariencia de tu sonrisa con tratamientos estéticos personalizados.",
       tratamientos: [
@@ -104,8 +102,7 @@ export default function EspecialidadesComponent() {
     {
       icon: "cleaning_services",
       titulo: "Prevención y Encías",
-      imagen:
-        "/prevencionencias.png",
+      imagen: "/prevencionencias.png",
       descripcion:
         "Cuidado preventivo, limpieza profunda y mantenimiento para conservar tu salud bucal.",
       tratamientos: [
@@ -119,8 +116,7 @@ export default function EspecialidadesComponent() {
     {
       icon: "nightlight",
       titulo: "Protección Dental",
-      imagen:
-        "/protecciondental.png",
+      imagen: "/protecciondental.png",
       descripcion:
         "Protectores personalizados para cuidar tus dientes del desgaste, bruxismo o impactos.",
       tratamientos: ["Protectores bucales", "Protectores nocturnos"],
@@ -362,13 +358,21 @@ export default function EspecialidadesComponent() {
             </p>
 
             <div className="flex flex-col md:flex-row gap-6 justify-center">
-              <button className="bg-secondary text-on-secondary px-10 py-4 font-label-md text-label-md uppercase tracking-widest hover:brightness-110 transition-all">
+              <button
+                onClick={() => navigate("/contacto")}
+                className="bg-secondary text-on-secondary px-10 py-4 font-label-md text-label-md uppercase tracking-widest hover:brightness-110 transition-all text-center"
+              >
                 Agendar Cita
               </button>
 
-              <button className="border border-secondary text-secondary px-10 py-4 font-label-md text-label-md uppercase tracking-widest hover:bg-secondary/5 transition-all">
+              <a
+                href="https://wa.me/526647544279?text=Hola%20Dr.%20David%20Favela,%20me%20gustaría%20agendar%20una%20consulta."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border border-secondary text-secondary px-10 py-4 font-label-md text-label-md uppercase tracking-widest hover:bg-secondary/5 transition-all text-center"
+              >
                 Contactar por WhatsApp
-              </button>
+              </a>
             </div>
           </div>
         </section>

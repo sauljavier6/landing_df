@@ -99,7 +99,15 @@ export default function ContactoComponent() {
                     </p>
 
                     <p className="font-headline-sm text-xl md:text-headline-sm text-secondary">
-                      Tijuana, Baja California
+                      New City Medical Plaza
+                    </p>
+
+                    <p className="font-body-md text-on-surface-variant mt-1">
+                      Piso 15, Oficina 1503
+                      <br />
+                      P.º del Centenario 9580
+                      <br />
+                      Zona Urbana Río Tijuana, C.P. 22010
                     </p>
                   </div>
                 </div>
@@ -121,8 +129,8 @@ export default function ContactoComponent() {
                   </h2>
 
                   <p className="font-body-md text-base md:text-body-md text-on-surface-variant max-w-md mx-auto leading-relaxed">
-                    Comunícate directamente con nuestro equipo para coordinar
-                    tu consulta de valoración.
+                    Comunícate directamente con nuestro equipo para coordinar tu
+                    consulta de valoración.
                   </p>
                 </div>
 

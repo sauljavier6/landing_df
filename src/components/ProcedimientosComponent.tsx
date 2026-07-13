@@ -16,42 +16,42 @@ export default function ProcedimientosComponent() {
       category: "Transformación de sonrisa",
       description:
         "Restauración integral de la sonrisa para recuperar función, estabilidad y estética.",
-      image: "/doctor/caso-rehabilitacion.jpg",
+      image: "/doctor/caso-rehabilitacion.png",
     },
     {
       title: "Limpieza y cuidado periodontal",
       category: "Prevención y encías",
       description:
         "Eliminación de cálculo dental y tratamiento periodontal para mejorar la salud de las encías.",
-      image: "/doctor/caso-limpieza.jpg",
+      image: "/doctor/caso-limpieza.jpeg",
     },
     {
       title: "Carillas estéticas",
       category: "Estética dental",
       description:
         "Corrección de forma, proporción y color mediante restauraciones de apariencia natural.",
-      image: "/doctor/caso-carillas.jpg",
+      image: "/doctor/carillasesteticas.png",
     },
     {
       title: "Restauración con corona",
       category: "Prótesis dental",
       description:
         "Reconstrucción de una pieza dental dañada para recuperar su anatomía y resistencia.",
-      image: "/doctor/caso-corona.jpg",
+      image: "/doctor/caso-corona.jpeg",
     },
     {
       title: "Rehabilitación estética",
       category: "Antes y después",
       description:
         "Plan de tratamiento diseñado para devolver armonía y naturalidad a toda la sonrisa.",
-      image: "/doctor/caso-rehabilitacion-completa.jpg",
+      image: "/doctor/rehabilitacion-estetica2.jpeg",
     },
     {
       title: "Diseño de sonrisa",
       category: "Estética avanzada",
       description:
         "Modificación cuidadosa del tamaño y forma dental conservando una apariencia natural.",
-      image: "/doctor/caso-estetica.jpg",
+      image: "/doctor/diseño.jpeg",
     },
   ];
 
@@ -89,7 +89,7 @@ export default function ProcedimientosComponent() {
         <section className="relative min-h-[720px] flex items-center overflow-hidden px-margin-mobile md:px-margin-desktop py-24">
           <div className="absolute inset-0">
             <img
-              src="/doctor/newcity-1.jpg"
+              src="/newcity.png"
               alt="NewCity Medical Plaza"
               className="h-full w-full object-cover"
             />
@@ -402,7 +402,7 @@ export default function ProcedimientosComponent() {
         {/* UBICACIÓN */}
         <section className="relative min-h-[720px] flex items-end overflow-hidden">
           <img
-            src="/doctor/newcity-2.jpg"
+            src="/newcity2.jpeg"
             alt="NewCity Medical Plaza en Tijuana"
             loading="lazy"
             className="absolute inset-0 h-full w-full object-cover"
