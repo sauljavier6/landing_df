@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function EspecialidadesComponent() {
   const navigate = useNavigate();
-  
+
   const categorias = [
     {
       icon: "health_and_safety",
@@ -124,136 +124,179 @@ export default function EspecialidadesComponent() {
   ];
 
   return (
-    <div className="bg-background text-on-background selection:bg-secondary selection:text-background font-body-md">
-      <main className="pt-20">
-        <header className="relative h-[614px] flex items-center justify-center overflow-hidden">
+    <div className="bg-background text-on-background selection:bg-secondary selection:text-background font-body-md overflow-x-hidden">
+      <main className="pt-16 md:pt-20">
+        {/* HERO */}
+        <header className="relative min-h-[580px] md:min-h-[650px] flex items-center justify-center overflow-hidden px-6">
           <div className="absolute inset-0 z-0">
             <img
-              className="w-full h-full object-cover opacity-40"
+              className="w-full h-full object-cover object-center opacity-45 scale-105"
               data-alt="A cinematic, wide-angle shot of a high-end medical office interior with dark wood paneling, warm ambient accent lighting in gold tones, and minimalist contemporary furniture. The environment exudes an atmosphere of elite professionalism and serene medical excellence, using a deep charcoal and champagne gold color palette to maintain the brand's sophisticated matte aesthetic."
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYsze2uGVVjkCxfIwzjQS-BHFsMsrx9wAwl_MiXsfpSVu60CCNQLA9POJja0v2HSXpIGEFrhSBenQ3dAz2k6PoFTYaxwvIDNfJ0mdtyYNXIuimvEBXPt3YtQwNkhTtdz5B1ZvF9ds3kJWn--68nNV25uAqIaJdjxQbeED2xyS-j9nPhQ-xjPOIN_k-twfl8d97PD4LeVvNSz2zfYHpsViBGboWwafP5cLVcoJkIJA6_vXeQlnkV4gqNKTVjtfkZdhJAkNW9RDcXwzu"
             />
-            <div className="absolute inset-0 hero-gradient"></div>
+
+            <div className="absolute inset-0 bg-gradient-to-b from-background/55 via-background/65 to-background" />
+            <div className="absolute inset-0 hero-gradient opacity-80" />
           </div>
-          <div className="relative z-10 text-center px-margin-mobile">
-            <h1 className="font-display-lg text-display-lg md:text-[64px] text-secondary mb-4 tracking-tighter">
-              Especialidades &amp; Tratamientos
+
+          <div className="absolute top-20 left-[-100px] w-72 h-72 rounded-full bg-secondary/10 blur-3xl" />
+          <div className="absolute bottom-10 right-[-120px] w-96 h-96 rounded-full bg-secondary/10 blur-3xl" />
+
+          <div className="relative z-10 text-center max-w-4xl mx-auto pt-10">
+            <span className="inline-block text-secondary font-label-md text-xs md:text-label-md uppercase tracking-[0.3em] mb-5">
+              Atención odontológica especializada
+            </span>
+
+            <h1 className="font-display-lg text-[42px] sm:text-[54px] md:text-[68px] lg:text-[76px] leading-[0.98] text-secondary tracking-tight mb-6">
+              Especialidades
+              <span className="block italic text-on-surface">
+                &amp; Tratamientos
+              </span>
             </h1>
-            <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+
+            <p className="font-body-lg text-base sm:text-lg md:text-body-lg text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
               Excelencia médica contemporánea a través de tecnología de
               vanguardia y un enfoque profundamente humano y personalizado.
             </p>
-            <div className="w-24 h-px bg-secondary mx-auto mt-8"></div>
+
+            <div className="flex items-center justify-center gap-3 mt-9">
+              <span className="w-12 md:w-20 h-px bg-secondary/30" />
+              <span className="w-2 h-2 rotate-45 border border-secondary" />
+              <span className="w-12 md:w-20 h-px bg-secondary/30" />
+            </div>
           </div>
         </header>
 
-        <section className="max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop -mt-20 relative z-20">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="matte-card p-8 border border-secondary/20">
-              <span className="material-symbols-outlined text-secondary text-4xl mb-4">
-                verified
-              </span>
-              <h3 className="font-headline-sm text-headline-sm text-on-surface mb-2">
-                Atención Integral
-              </h3>
-              <p className="text-on-surface-variant">
-                Desde prevención hasta rehabilitación completa con implantes.
-              </p>
-            </div>
+        {/* BENEFICIOS */}
+        <section className="max-w-container-max-width mx-auto px-6 md:px-margin-desktop -mt-14 md:-mt-20 relative z-20">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+            {[
+              {
+                icon: "verified",
+                titulo: "Atención Integral",
+                texto:
+                  "Desde prevención hasta rehabilitación completa con implantes.",
+              },
+              {
+                icon: "precision_manufacturing",
+                titulo: "Tecnología y Planeación",
+                texto:
+                  "Tratamientos diseñados con precisión para cada paciente.",
+              },
+              {
+                icon: "sentiment_satisfied",
+                titulo: "Sonrisas Naturales",
+                texto:
+                  "Resultados funcionales, estéticos y personalizados.",
+              },
+            ].map((item) => (
+              <article
+                key={item.titulo}
+                className="group relative overflow-hidden bg-surface-container/95 backdrop-blur-md p-7 sm:p-8 border border-secondary/20 hover:border-secondary/50 transition-all duration-500 hover:-translate-y-1"
+              >
+                <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-secondary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 
-            <div className="matte-card p-8 border border-secondary/20">
-              <span className="material-symbols-outlined text-secondary text-4xl mb-4">
-                precision_manufacturing
-              </span>
-              <h3 className="font-headline-sm text-headline-sm text-on-surface mb-2">
-                Tecnología y Planeación
-              </h3>
-              <p className="text-on-surface-variant">
-                Tratamientos diseñados con precisión para cada paciente.
-              </p>
-            </div>
+                <div className="w-12 h-12 mb-6 border border-secondary/30 bg-secondary/5 flex items-center justify-center group-hover:bg-secondary group-hover:text-on-secondary transition-all duration-300">
+                  <span className="material-symbols-outlined text-secondary text-3xl group-hover:text-on-secondary transition-colors">
+                    {item.icon}
+                  </span>
+                </div>
 
-            <div className="matte-card p-8 border border-secondary/20">
-              <span className="material-symbols-outlined text-secondary text-4xl mb-4">
-                sentiment_satisfied
-              </span>
-              <h3 className="font-headline-sm text-headline-sm text-on-surface mb-2">
-                Sonrisas Naturales
-              </h3>
-              <p className="text-on-surface-variant">
-                Resultados funcionales, estéticos y personalizados.
-              </p>
-            </div>
+                <h3 className="font-headline-sm text-xl md:text-headline-sm text-on-surface mb-3">
+                  {item.titulo}
+                </h3>
+
+                <p className="text-on-surface-variant leading-relaxed">
+                  {item.texto}
+                </p>
+              </article>
+            ))}
           </div>
         </section>
 
-        <section className="max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop py-28">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-secondary font-label-md text-label-md uppercase tracking-[0.2em] block mb-3">
+        {/* SERVICIOS */}
+        <section className="max-w-container-max-width mx-auto px-6 md:px-margin-desktop py-20 md:py-28">
+          <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+            <span className="text-secondary font-label-md text-xs md:text-label-md uppercase tracking-[0.25em] block mb-4">
               Nuestros Servicios
             </span>
 
-            <h2 className="font-headline-lg text-headline-lg text-on-surface mb-6">
+            <h2 className="font-headline-lg text-3xl sm:text-4xl md:text-headline-lg text-on-surface mb-6 leading-tight">
               Odontología Integral para Adultos
             </h2>
 
-            <p className="text-on-surface-variant font-body-md text-body-md">
+            <p className="text-on-surface-variant font-body-md text-base md:text-body-md leading-relaxed">
               Realizamos una gran variedad de tratamientos dentales, agrupados
               por especialidad para ayudarte a encontrar la atención que
               necesitas.
             </p>
           </div>
 
-          <div className="mb-14 rounded-2xl border border-secondary/20 bg-secondary/10 p-6 md:p-8 flex gap-5 items-start">
-            <span className="material-symbols-outlined text-secondary text-3xl">
-              info
-            </span>
+          {/* NOTA */}
+          <div className="max-w-4xl mx-auto mb-12 md:mb-16 border-l-2 border-secondary bg-surface-container-low px-5 sm:px-7 py-5 flex gap-4 items-start">
+            <div className="w-10 h-10 shrink-0 rounded-full bg-secondary/10 flex items-center justify-center">
+              <span className="material-symbols-outlined text-secondary text-2xl">
+                info
+              </span>
+            </div>
+
             <div>
-              <h3 className="font-headline-sm text-headline-sm text-secondary mb-2">
+              <h3 className="font-headline-sm text-lg md:text-headline-sm text-secondary mb-2">
                 Nota importante
               </h3>
-              <p className="text-on-surface-variant font-body-md text-body-md">
+
+              <p className="text-on-surface-variant font-body-md text-sm md:text-body-md leading-relaxed">
                 Actualmente atendemos pacientes adultos y adolescentes. Por el
                 momento no contamos con atención odontopediátrica.
               </p>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+          {/* TARJETAS */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 md:gap-8 items-stretch">
             {categorias.map((categoria) => (
               <article
                 key={categoria.titulo}
-                className="group matte-card overflow-hidden border border-secondary/10 hover:border-secondary/40 transition-all"
+                className="group relative flex flex-col h-full bg-surface-container border border-secondary/10 hover:border-secondary/40 overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-black/20"
               >
-                <div className="relative h-56 overflow-hidden">
+                <div className="relative h-52 sm:h-56 overflow-hidden">
                   <img
                     src={categoria.imagen}
                     alt={categoria.titulo}
-                    className="w-full h-full object-cover opacity-75 group-hover:scale-110 group-hover:opacity-90 transition-all duration-700"
+                    className="w-full h-full object-cover opacity-75 group-hover:scale-105 group-hover:opacity-95 transition-all duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>
 
-                  <div className="absolute left-6 bottom-6 w-14 h-14 rounded-full bg-secondary text-on-secondary flex items-center justify-center shadow-xl">
+                  <div className="absolute inset-0 bg-gradient-to-t from-surface-container via-background/10 to-transparent" />
+
+                  <div className="absolute top-5 right-5 w-10 h-10 rounded-full border border-white/20 bg-background/30 backdrop-blur-md flex items-center justify-center opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all">
+                    <span className="material-symbols-outlined text-secondary text-xl">
+                      arrow_outward
+                    </span>
+                  </div>
+
+                  <div className="absolute left-6 bottom-5 w-14 h-14 rounded-full bg-secondary text-on-secondary flex items-center justify-center shadow-xl ring-4 ring-surface-container">
                     <span className="material-symbols-outlined text-3xl">
                       {categoria.icon}
                     </span>
                   </div>
                 </div>
 
-                <div className="p-7">
-                  <h3 className="font-headline-sm text-headline-sm text-on-surface mb-3">
+                <div className="p-6 sm:p-7 flex flex-col flex-1">
+                  <h3 className="font-headline-sm text-xl md:text-headline-sm text-on-surface mb-3">
                     {categoria.titulo}
                   </h3>
 
-                  <p className="text-on-surface-variant font-body-md text-body-md mb-6">
+                  <p className="text-on-surface-variant font-body-md text-sm md:text-body-md leading-relaxed mb-6 min-h-[72px]">
                     {categoria.descripcion}
                   </p>
 
-                  <div className="flex flex-wrap gap-2">
+                  <div className="h-px w-full bg-outline-variant/10 mb-5" />
+
+                  <div className="flex flex-wrap gap-2 mt-auto">
                     {categoria.tratamientos.map((tratamiento) => (
                       <span
                         key={tratamiento}
-                        className="rounded-full border border-secondary/20 bg-surface-container-low text-on-surface-variant px-3 py-1 text-xs"
+                        className="rounded-full border border-secondary/15 bg-surface-container-low text-on-surface-variant px-3 py-1.5 text-[11px] leading-none transition-colors hover:border-secondary/40 hover:text-secondary"
                       >
                         {tratamiento}
                       </span>
@@ -265,35 +308,46 @@ export default function EspecialidadesComponent() {
           </div>
         </section>
 
-        <section className="bg-surface-container-low py-24">
-          <div className="max-w-container-max-width mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="relative">
-              <div className="aspect-[4/5] bg-surface-container-highest overflow-hidden border border-secondary/20">
+        {/* PROCESO */}
+        <section className="relative bg-surface-container-low py-20 md:py-28 overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-secondary/30 to-transparent" />
+
+          <div className="max-w-container-max-width mx-auto px-6 md:px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div className="relative max-w-xl mx-auto lg:mx-0 w-full">
+              <div className="absolute -inset-4 md:-inset-6 border border-secondary/10" />
+
+              <div className="relative aspect-[4/5] bg-surface-container-highest overflow-hidden border border-secondary/20">
                 <img
-                  className="w-full h-full object-cover opacity-80"
+                  className="w-full h-full object-cover object-center opacity-85 hover:scale-105 transition-transform duration-1000"
                   data-alt="Doctor dental en consultorio moderno."
                   src="/david_perfil.jpeg"
                 />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-transparent" />
               </div>
 
-              <div className="absolute -bottom-6 -right-6 md:-right-12 bg-secondary p-8 hidden md:block">
-                <p className="text-background font-headline-sm text-headline-sm leading-tight">
+              <div className="relative md:absolute md:-bottom-8 md:-right-8 lg:-right-12 bg-secondary p-6 md:p-8 mt-4 md:mt-0 md:max-w-[320px] shadow-2xl">
+                <span className="material-symbols-outlined text-on-secondary/50 text-3xl mb-3">
+                  format_quote
+                </span>
+
+                <p className="text-on-secondary font-headline-sm text-lg md:text-headline-sm leading-relaxed">
                   "Cada sonrisa requiere precisión, diagnóstico y atención
                   personalizada."
                 </p>
               </div>
             </div>
 
-            <div>
-              <span className="text-secondary font-label-md text-label-md uppercase tracking-[0.2em] block mb-3">
+            <div className="pt-4 lg:pt-0">
+              <span className="text-secondary font-label-md text-xs md:text-label-md uppercase tracking-[0.25em] block mb-4">
                 Experiencia Personalizada
               </span>
 
-              <h2 className="font-headline-lg text-headline-lg text-secondary mb-8 gold-underline">
+              <h2 className="font-headline-lg text-3xl sm:text-4xl md:text-headline-lg text-secondary mb-10 leading-tight gold-underline">
                 Un plan dental diseñado para tu sonrisa
               </h2>
 
-              <div className="space-y-8">
+              <div className="space-y-0">
                 {[
                   {
                     numero: "01",
@@ -313,16 +367,25 @@ export default function EspecialidadesComponent() {
                     texto:
                       "Buscamos que cada tratamiento no solo se vea bien, sino que también mejore tu salud, mordida, comodidad y calidad de vida.",
                   },
-                ].map((item) => (
-                  <div key={item.numero} className="flex gap-6">
-                    <span className="text-secondary font-display-lg text-display-lg leading-none opacity-50">
+                ].map((item, index) => (
+                  <div
+                    key={item.numero}
+                    className={`group flex gap-5 md:gap-7 py-7 ${
+                      index !== 2
+                        ? "border-b border-outline-variant/10"
+                        : ""
+                    }`}
+                  >
+                    <span className="text-secondary font-display-lg text-4xl md:text-5xl leading-none opacity-35 group-hover:opacity-70 transition-opacity shrink-0">
                       {item.numero}
                     </span>
+
                     <div>
-                      <h4 className="font-headline-sm text-headline-sm text-on-surface mb-2">
+                      <h4 className="font-headline-sm text-xl md:text-headline-sm text-on-surface mb-3">
                         {item.titulo}
                       </h4>
-                      <p className="text-on-surface-variant font-body-md text-body-md">
+
+                      <p className="text-on-surface-variant font-body-md text-base md:text-body-md leading-relaxed">
                         {item.texto}
                       </p>
                     </div>
@@ -333,34 +396,46 @@ export default function EspecialidadesComponent() {
           </div>
         </section>
 
-        <section className="relative py-28 text-center px-margin-mobile overflow-hidden">
+        {/* CTA */}
+        <section className="relative py-24 md:py-32 text-center px-6 overflow-hidden">
           <div className="absolute inset-0 z-0">
             <img
-              className="w-full h-full object-cover opacity-25"
+              className="w-full h-full object-cover opacity-25 scale-105"
               src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1800&auto=format&fit=crop"
               alt="Sonrisa saludable"
             />
-            <div className="absolute inset-0 bg-background/85"></div>
+
+            <div className="absolute inset-0 bg-background/90" />
+            <div className="absolute inset-0 bg-gradient-to-r from-secondary/5 via-transparent to-secondary/5" />
           </div>
 
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-secondary/5 rounded-full blur-3xl" />
+
           <div className="relative z-10 max-w-3xl mx-auto">
-            <span className="text-secondary font-label-md text-label-md uppercase tracking-[0.2em] block mb-4">
+            <div className="w-14 h-14 mx-auto mb-7 rounded-full border border-secondary/30 bg-secondary/5 flex items-center justify-center">
+              <span className="material-symbols-outlined text-secondary text-3xl">
+                dentistry
+              </span>
+            </div>
+
+            <span className="text-secondary font-label-md text-xs md:text-label-md uppercase tracking-[0.25em] block mb-5">
               Agenda tu valoración
             </span>
 
-            <h2 className="font-display-lg text-display-lg text-on-surface mb-8">
+            <h2 className="font-display-lg text-4xl sm:text-5xl md:text-display-lg text-on-surface mb-7 leading-tight">
               ¿Listo para transformar tu sonrisa?
             </h2>
 
-            <p className="text-on-surface-variant font-body-lg text-body-lg max-w-2xl mx-auto mb-10">
+            <p className="text-on-surface-variant font-body-lg text-base md:text-body-lg max-w-2xl mx-auto mb-10 leading-relaxed">
               Recibe una valoración profesional y conoce el tratamiento más
               adecuado para mejorar tu salud y estética dental.
             </p>
 
-            <div className="flex flex-col md:flex-row gap-6 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
               <button
+                type="button"
                 onClick={() => navigate("/contacto")}
-                className="bg-secondary text-on-secondary px-10 py-4 font-label-md text-label-md uppercase tracking-widest hover:brightness-110 transition-all text-center"
+                className="w-full sm:w-auto bg-secondary text-on-secondary px-8 sm:px-10 py-4 font-label-md text-sm md:text-label-md uppercase tracking-widest hover:brightness-110 active:scale-[0.98] transition-all text-center"
               >
                 Agendar Cita
               </button>
@@ -369,7 +444,7 @@ export default function EspecialidadesComponent() {
                 href="https://wa.me/526647544279?text=Hola%20Dr.%20David%20Favela,%20me%20gustaría%20agendar%20una%20consulta."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border border-secondary text-secondary px-10 py-4 font-label-md text-label-md uppercase tracking-widest hover:bg-secondary/5 transition-all text-center"
+                className="w-full sm:w-auto border border-secondary text-secondary px-8 sm:px-10 py-4 font-label-md text-sm md:text-label-md uppercase tracking-widest hover:bg-secondary hover:text-on-secondary active:scale-[0.98] transition-all text-center"
               >
                 Contactar por WhatsApp
               </a>
